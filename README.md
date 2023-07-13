@@ -15,7 +15,7 @@ Para clonar e executar o projeto em sua máquina local, siga estas etapas:
 2. Clone este repositório para o seu ambiente local usando o seguinte comando:
 
 ```
-git clone https://github.com/seu-usuario/PyBotIntelligence.git
+git clone https://github.com/gabrielmango/PyBotIntelligence.git
 ```
 
 3. Acesse o diretório do projeto:
