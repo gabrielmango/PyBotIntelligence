@@ -34,7 +34,7 @@ def responder(texto_usuario):
     resposta_chatbot = resposta_chatbot + lista_sentencas[indice_sentenca]
     return resposta_chatbot
 
-def conversa():
+def chat_conversa():
   continuar = True
   print('Olá, sou um chatbot e vou responder perguntas sobre inteligência artificial: ')
   while (continuar == True):
@@ -50,6 +50,19 @@ def conversa():
     else:
       continuar = False
       print('Chatbot: Até breve!')
+
+def conversa(mensagem):
+  mensagem = mensagem.lower()
+  if mensagem != 'sair':
+    if responder_saudacao(mensagem) != None:
+      return 'Chatbot: ' + responder_saudacao(mensagem)
+    else:
+      reposta = 'Chatbot: ' + responder(preprocessamento(mensagem))
+      lista_sentencas_preprocessada.remove(preprocessamento(mensagem))
+      return reposta
+  else:
+    return 'Chatbot: Até breve!'
+
 
 if __name__ == '__main__':
   os.system('cls')

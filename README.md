@@ -30,7 +30,7 @@ cd PyBotIntelligence
 pip install -r requirements.txt
 ```
 
-5. Execute o arquivo `chatbot.py` para iniciar o chatbot:
+5. Execute o arquivo `main.py` para iniciar o chatbot:
 
 ```
 python chatbot.py
