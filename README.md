@@ -33,7 +33,7 @@ pip install -r requirements.txt
 5. Execute o arquivo `main.py` para iniciar o chatbot:
 
 ```
-python chatbot.py
+python main.py
 ```
 
 Agora você pode interagir com o PyBotIntelligence e fazer suas perguntas relacionadas a Inteligência Artificial.
