@@ -3,7 +3,7 @@ import random
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from app.processing import lista_sentencas_preprocessada, lista_sentencas
+from processing import lista_sentencas_preprocessada, lista_sentencas, preprocessamento
 
 textos_boas_vindas_entrada = ('hey', 'olá', 'opa', 'oi', 'eae')
 textos_boas_vindas_respostas = ('hey', 'olá', 'opa', 'oi', 'bem-vindo', 'como você está?')
@@ -34,12 +34,24 @@ def responder(texto_usuario):
     resposta_chatbot = resposta_chatbot + lista_sentencas[indice_sentenca]
     return resposta_chatbot
 
+def conversa():
+  continuar = True
+  print('Olá, sou um chatbot e vou responder perguntas sobre inteligência artificial: ')
+  while (continuar == True):
+    texto_usuario = input()
+    texto_usuario = texto_usuario.lower()
+    if (texto_usuario != 'sair'):
+      if (responder_saudacao(texto_usuario) != None):
+        print('Chatbot: ' + responder_saudacao(texto_usuario))
+      else:
+        print('Chatbot: ')
+        print(responder(preprocessamento(texto_usuario)))
+        lista_sentencas_preprocessada.remove(preprocessamento(texto_usuario))
+    else:
+      continuar = False
+      print('Chatbot: Até breve!')
 
 if __name__ == '__main__':
-    os.system('cls')
+  os.system('cls')
 
-    mensagem_teste = 'olá tudo bem'
-    print(mensagem_teste.split())
-
-    responder = responder_saudacao('olá tudo bem?')
-    print(responder)
+  print(responder('Alan Turing'))
